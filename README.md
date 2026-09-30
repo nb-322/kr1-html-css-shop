@@ -29,7 +29,7 @@
 
 ## Текущий статус
 
-Стили переведены на CSS-переменные, добавлены состояния интерфейса.
+Классы переименованы по БЭМ, добавлено позиционирование (бейдж, кнопка «Наверх»).
 
 ## Ссылка на опубликованный проект
 
@@ -77,3 +77,17 @@ GitHub Pages: https://nb-322.github.io/kr1-html-css-shop/
 - состояния `:hover`, `:focus-visible`, `:disabled`;
 - подсветка ошибочных полей через `[aria-invalid="true"]`;
 - файл `css/style.css` разделён на смысловые блоки.
+
+## БЭМ и позиционирование
+
+Классы названы по методологии БЭМ: блок, элемент через `__`, модификатор через `--`.
+Основные блоки: `site-header`, `site-nav`, `hero`, `advantages`, `products`,
+`product-card`, `about`, `site-footer`, `contacts`, `order-dialog`, `order-form`,
+`button`, `scroll-top`.
+
+Позиционирование:
+
+- `position: relative` у карточки товара как контейнера;
+- `position: absolute` у бейджа «Хит» внутри карточки;
+- `position: fixed` у кнопки «Наверх»;
+- `z-index` вынесен в переменные `--z-badge` и `--z-scroll-top`.
