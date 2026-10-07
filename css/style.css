@@ -114,6 +114,11 @@ section:target,
    4. Шапка и навигация
    =============================== */
 .site-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
     padding: var(--space-lg);
     background-color: var(--color-surface);
 }
@@ -125,21 +130,25 @@ section:target,
 }
 
 .site-nav__list {
-    margin: var(--space-sm) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+    margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.site-nav__item {
-    margin-bottom: var(--space-sm);
-}
-
 .site-nav__link {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
     text-decoration: none;
 }
 
 .site-nav__link:hover {
-    text-decoration: underline;
+    color: var(--color-white);
+    background-color: var(--color-primary);
 }
 
 .site-nav__link--active {
@@ -206,9 +215,17 @@ section:target,
 /* ===============================
    6. Карточки товаров
    =============================== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-lg);
+}
+
 .product-card {
     position: relative;
-    margin-bottom: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
     padding: var(--space-md);
     border: 1px solid var(--color-border-light);
     border-radius: var(--radius-lg);
@@ -234,8 +251,10 @@ section:target,
     border-color: var(--color-primary);
 }
 
-.product-card__title {
-    margin-top: 0;
+.product-card__title,
+.product-card__description,
+.product-card__price {
+    margin: 0;
 }
 
 .product-card__price {
@@ -243,11 +262,70 @@ section:target,
 }
 
 .product-card__button {
-    margin-top: var(--space-sm);
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 /* ===============================
-   7. Подвал и кнопка «Наверх»
+   7. Каталог и фильтры
+   =============================== */
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-areas: "filters products";
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.catalog-layout__filters {
+    grid-area: filters;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface-alt);
+}
+
+.catalog-layout__products {
+    grid-area: products;
+}
+
+.filters {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.filters__title {
+    margin-top: 0;
+}
+
+.filters__group {
+    margin: 0;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.filters__legend {
+    font-weight: bold;
+}
+
+.filters__option,
+.filters__label {
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.filters__input {
+    width: 100%;
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font: inherit;
+}
+
+/* ===============================
+   8. Подвал и кнопка «Наверх»
    =============================== */
 .site-footer {
     padding: var(--space-lg);
@@ -282,7 +360,7 @@ section:target,
 }
 
 /* ===============================
-   8. Форма и модальное окно
+   9. Форма и модальное окно
    =============================== */
 .order-dialog {
     width: min(100% - 32px, 560px);

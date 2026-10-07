@@ -38,51 +38,86 @@
         </p>
     </section>
 
-    <section class="products" id="goods">
-        <h2 class="products__title">Список товаров</h2>
+    <section class="catalog-layout" id="goods">
+        <aside class="catalog-layout__filters">
+            <h2 class="filters__title">Фильтры</h2>
+            <form class="filters" action="#" method="get">
+                <fieldset class="filters__group">
+                    <legend class="filters__legend">Категория</legend>
+                    <label class="filters__option">
+                        <input class="filters__checkbox" type="checkbox" name="category" value="all">
+                        Все товары
+                    </label>
+                    <label class="filters__option">
+                        <input class="filters__checkbox" type="checkbox" name="category" value="popular">
+                        Популярные
+                    </label>
+                    <label class="filters__option">
+                        <input class="filters__checkbox" type="checkbox" name="category" value="new">
+                        Новинки
+                    </label>
+                </fieldset>
 
-        <article class="product-card product-card--hit">
-            <span class="product-card__badge">Хит</span>
-            <h3 class="product-card__title">Наушники</h3>
-            <p class="product-card__description">Беспроводные, с шумоподавлением, до 30 часов работы.</p>
-            <p class="product-card__price">Цена: 7900 руб.</p>
-            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
-        </article>
+                <fieldset class="filters__group">
+                    <legend class="filters__legend">Цена, руб.</legend>
+                    <label class="filters__label" for="price-from">От</label>
+                    <input class="filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+                    <label class="filters__label" for="price-to">До</label>
+                    <input class="filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="8000">
+                </fieldset>
 
-        <article class="product-card">
-            <h3 class="product-card__title">Клавиатура</h3>
-            <p class="product-card__description">Механическая, формат 75%, подсветка.</p>
-            <p class="product-card__price">Цена: 6500 руб.</p>
-            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
-        </article>
+                <button class="button" type="submit">Применить</button>
+            </form>
+        </aside>
 
-        <article class="product-card">
-            <h3 class="product-card__title">Мышь</h3>
-            <p class="product-card__description">Беспроводная, вес 63 грамма, для работы и игр.</p>
-            <p class="product-card__price">Цена: 4200 руб.</p>
-            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
-        </article>
+        <section class="catalog-layout__products">
+            <h2 class="products__title">Список товаров</h2>
+            <div class="products-grid">
 
-        <article class="product-card">
-            <h3 class="product-card__title">Коврик для мыши</h3>
-            <p class="product-card__description">Тканевый, размер 900 на 400 мм, прошитый край.</p>
-            <p class="product-card__price">Цена: 1200 руб.</p>
-            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
-        </article>
+                <article class="product-card product-card--hit">
+                    <span class="product-card__badge">Хит</span>
+                    <h3 class="product-card__title">Наушники</h3>
+                    <p class="product-card__description">Беспроводные, с шумоподавлением, до 30 часов работы.</p>
+                    <p class="product-card__price">Цена: 7900 руб.</p>
+                    <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+                </article>
 
-        <article class="product-card">
-            <h3 class="product-card__title">Веб-камера</h3>
-            <p class="product-card__description">Разрешение 1080p, автофокус, встроенный микрофон.</p>
-            <p class="product-card__price">Цена: 5300 руб.</p>
-            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
-        </article>
+                <article class="product-card">
+                    <h3 class="product-card__title">Клавиатура</h3>
+                    <p class="product-card__description">Механическая, формат 75%, подсветка.</p>
+                    <p class="product-card__price">Цена: 6500 руб.</p>
+                    <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+                </article>
 
-        <article class="product-card">
-            <h3 class="product-card__title">USB-хаб</h3>
-            <p class="product-card__description">Четыре порта USB 3.0, алюминиевый корпус.</p>
-            <p class="product-card__price">Цена: 1900 руб.</p>
-            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
-        </article>
+                <article class="product-card">
+                    <h3 class="product-card__title">Мышь</h3>
+                    <p class="product-card__description">Беспроводная, вес 63 грамма, для работы и игр.</p>
+                    <p class="product-card__price">Цена: 4200 руб.</p>
+                    <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Коврик для мыши</h3>
+                    <p class="product-card__description">Тканевый, размер 900 на 400 мм, прошитый край.</p>
+                    <p class="product-card__price">Цена: 1200 руб.</p>
+                    <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Веб-камера</h3>
+                    <p class="product-card__description">Разрешение 1080p, автофокус, встроенный микрофон.</p>
+                    <p class="product-card__price">Цена: 5300 руб.</p>
+                    <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">USB-хаб</h3>
+                    <p class="product-card__description">Четыре порта USB 3.0, алюминиевый корпус.</p>
+                    <p class="product-card__price">Цена: 1900 руб.</p>
+                    <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+                </article>
+            </div>
+        </section>
     </section>
 
     <aside class="about">
