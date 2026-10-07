@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог товаров учебного интернет-магазина: наушники, клавиатуры, мыши и аксессуары.">
+    <title>Каталог товаров - Учебный интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+<header class="site-header">
+    <a class="site-header__logo" href="index.html">ShopProject</a>
+    <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+            <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
+            </li>
+            <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="page">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a class="breadcrumbs__link" href="index.html">Главная</a>
+        <span class="breadcrumbs__current">Каталог</span>
+    </nav>
+
+    <section class="catalog">
+        <h1 class="catalog__title">Каталог товаров</h1>
+        <p class="catalog__text">
+            Учебный каталог компьютерной периферии. Фильтры, сортировка и отдельные
+            страницы товаров появятся на следующих занятиях.
+        </p>
+    </section>
+
+    <section class="products" id="goods">
+        <h2 class="products__title">Список товаров</h2>
+
+        <article class="product-card product-card--hit">
+            <span class="product-card__badge">Хит</span>
+            <h3 class="product-card__title">Наушники</h3>
+            <p class="product-card__description">Беспроводные, с шумоподавлением, до 30 часов работы.</p>
+            <p class="product-card__price">Цена: 7900 руб.</p>
+            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+        </article>
+
+        <article class="product-card">
+            <h3 class="product-card__title">Клавиатура</h3>
+            <p class="product-card__description">Механическая, формат 75%, подсветка.</p>
+            <p class="product-card__price">Цена: 6500 руб.</p>
+            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+        </article>
+
+        <article class="product-card">
+            <h3 class="product-card__title">Мышь</h3>
+            <p class="product-card__description">Беспроводная, вес 63 грамма, для работы и игр.</p>
+            <p class="product-card__price">Цена: 4200 руб.</p>
+            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+        </article>
+
+        <article class="product-card">
+            <h3 class="product-card__title">Коврик для мыши</h3>
+            <p class="product-card__description">Тканевый, размер 900 на 400 мм, прошитый край.</p>
+            <p class="product-card__price">Цена: 1200 руб.</p>
+            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+        </article>
+
+        <article class="product-card">
+            <h3 class="product-card__title">Веб-камера</h3>
+            <p class="product-card__description">Разрешение 1080p, автофокус, встроенный микрофон.</p>
+            <p class="product-card__price">Цена: 5300 руб.</p>
+            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+        </article>
+
+        <article class="product-card">
+            <h3 class="product-card__title">USB-хаб</h3>
+            <p class="product-card__description">Четыре порта USB 3.0, алюминиевый корпус.</p>
+            <p class="product-card__price">Цена: 1900 руб.</p>
+            <a class="button product-card__button" href="index.html#popular">Подробнее</a>
+        </article>
+    </section>
+
+    <aside class="about">
+        <h2 class="about__title">Как оформить заказ</h2>
+        <p class="about__text">
+            Выберите товар на главной странице и нажмите «Заказать»: откроется форма
+            заявки. Менеджер свяжется с вами в рабочее время.
+        </p>
+    </aside>
+</main>
+
+<footer class="site-footer" id="contacts">
+    <h2 class="site-footer__title">Контакты</h2>
+    <ul class="contacts">
+        <li class="contacts__item">Телефон: <a class="contacts__link" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+        <li class="contacts__item">E-mail: <a class="contacts__link" href="mailto:info@shopproject.ru">info@shopproject.ru</a></li>
+        <li class="contacts__item">Адрес: Москва, проспект Вернадского, 78</li>
+        <li class="contacts__item">Время работы: ежедневно с 10:00 до 20:00</li>
+    </ul>
+    <p class="site-footer__text">&copy; 2026 Учебный проект</p>
+    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+</footer>
+
+<a class="scroll-top" href="#top" title="Наверх">Наверх</a>
+</body>
+</html>

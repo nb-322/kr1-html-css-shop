@@ -39,6 +39,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -59,6 +63,12 @@ a:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
+}
+
+section:target,
+.site-footer:target {
+    outline: 2px dashed var(--color-primary);
+    outline-offset: 4px;
 }
 
 /* ===============================
@@ -145,6 +155,17 @@ button:focus-visible {
     padding: var(--space-lg);
 }
 
+.breadcrumbs {
+    margin-bottom: var(--space-md);
+    font-size: 14px;
+    color: var(--color-muted);
+}
+
+.breadcrumbs__current::before {
+    content: " / ";
+    color: var(--color-muted);
+}
+
 .hero {
     margin-bottom: var(--space-lg);
     padding: var(--space-xl) var(--space-lg);
@@ -157,12 +178,18 @@ button:focus-visible {
 }
 
 .advantages,
-.products {
+.products,
+.catalog,
+.contacts-info,
+.feedback {
     margin-bottom: var(--space-lg);
 }
 
 .advantages__title,
-.products__title {
+.products__title,
+.catalog__title,
+.contacts-info__title,
+.feedback__title {
     margin-top: 0;
 }
 
