@@ -70,6 +70,7 @@ button:focus-visible {
 .feedback:target,
 .contacts-info:target,
 .catalog-layout:target,
+.product-specs:target,
 .site-footer:target {
     outline: 2px dashed var(--color-primary);
     outline-offset: 4px;
@@ -184,6 +185,7 @@ button:focus-visible {
     color: var(--color-muted);
 }
 
+.breadcrumbs__link + .breadcrumbs__link::before,
 .breadcrumbs__current::before {
     content: " / ";
     color: var(--color-muted);
@@ -303,7 +305,88 @@ button:focus-visible {
 }
 
 /* ===============================
-   7. Каталог и фильтры
+   7. Страница товара и таблица
+   =============================== */
+.product,
+.product-specs,
+.order {
+    margin-bottom: var(--space-lg);
+}
+
+.product__title,
+.product-specs__title,
+.order__title {
+    margin-top: 0;
+}
+
+.product__layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+.product__image {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+}
+
+.product__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: flex-start;
+}
+
+.product__description,
+.product__price,
+.product__availability {
+    margin: 0;
+}
+
+.product__price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product__availability {
+    color: var(--color-success);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table__caption {
+    margin-bottom: var(--space-sm);
+    color: var(--color-muted);
+    text-align: left;
+}
+
+.product-table th,
+.product-table td {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border-light);
+    text-align: left;
+}
+
+.product-table thead th {
+    background-color: var(--color-surface);
+}
+
+.product-table tbody tr:nth-child(even) {
+    background-color: var(--color-surface-alt);
+}
+
+.order__text {
+    margin-top: 0;
+}
+
+/* ===============================
+   8. Каталог и фильтры
    =============================== */
 .catalog-layout {
     display: grid;
@@ -361,7 +444,7 @@ button:focus-visible {
 }
 
 /* ===============================
-   8. Подвал и кнопка «Наверх»
+   9. Подвал и кнопка «Наверх»
    =============================== */
 .site-footer {
     padding: var(--space-lg);
@@ -396,7 +479,7 @@ button:focus-visible {
 }
 
 /* ===============================
-   9. Форма и модальное окно
+   10. Форма и модальное окно
    =============================== */
 .order-dialog {
     width: min(100% - 32px, 560px);

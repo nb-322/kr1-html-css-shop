@@ -5,41 +5,59 @@ const selectedProductInput = document.getElementById('selected-product');
 const orderForm = document.getElementById('order-form');
 const successMessage = document.getElementById('success-message');
 
-orderButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        selectedProductInput.value = button.dataset.product;
-        successMessage.hidden = true;
-        orderDialog.showModal();
+if (orderDialog) {
+    orderButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (selectedProductInput) {
+                selectedProductInput.value = button.dataset.product;
+            }
+
+            if (successMessage) {
+                successMessage.hidden = true;
+            }
+
+            orderDialog.showModal();
+        });
     });
-});
+}
 
-closeDialogButton.addEventListener('click', () => {
-    orderDialog.close();
-});
-
-orderForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const formElements = Array.from(orderForm.elements);
-
-    formElements.forEach((element) => {
-        if (element.willValidate) {
-            element.removeAttribute('aria-invalid');
-        }
+if (closeDialogButton && orderDialog) {
+    closeDialogButton.addEventListener('click', () => {
+        orderDialog.close();
     });
+}
 
-    if (!orderForm.checkValidity()) {
+if (orderForm) {
+    orderForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formElements = Array.from(orderForm.elements);
+
         formElements.forEach((element) => {
-            if (element.willValidate && !element.checkValidity()) {
-                element.setAttribute('aria-invalid', 'true');
+            if (element.willValidate) {
+                element.removeAttribute('aria-invalid');
             }
         });
 
-        orderForm.reportValidity();
-        return;
-    }
+        if (!orderForm.checkValidity()) {
+            formElements.forEach((element) => {
+                if (element.willValidate && !element.checkValidity()) {
+                    element.setAttribute('aria-invalid', 'true');
+                }
+            });
 
-    successMessage.hidden = false;
-    orderForm.reset();
-    orderDialog.close();
-});
+            orderForm.reportValidity();
+            return;
+        }
+
+        if (successMessage) {
+            successMessage.hidden = false;
+        }
+
+        orderForm.reset();
+
+        if (orderDialog && orderDialog.open) {
+            orderDialog.close();
+        }
+    });
+}
