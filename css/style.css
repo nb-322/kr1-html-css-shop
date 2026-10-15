@@ -28,8 +28,11 @@
     --radius-lg: 8px;
 
     --container-width: 1100px;
+    --header-height: 88px;
+
     --z-badge: 1;
     --z-scroll-top: 10;
+    --z-site-header: 30;
 }
 
 /* ===============================
@@ -41,10 +44,12 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
 }
 
 body {
     margin: 0;
+    padding-top: var(--header-height);
     font-family: Arial, sans-serif;
     line-height: 1.5;
     color: var(--color-text);
@@ -123,18 +128,30 @@ button:focus-visible {
    4. Шапка и навигация
    =============================== */
 .site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: var(--z-site-header);
+    height: var(--header-height);
     background-color: var(--color-surface);
 }
 
 .site-header__inner {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     gap: var(--space-md);
     max-width: var(--container-width);
+    height: 100%;
     margin: 0 auto;
-    padding: var(--space-lg);
+    padding: 0 var(--space-lg);
+}
+
+.site-nav {
+    min-width: 0;
+    overflow-x: auto;
 }
 
 .site-header__logo {
@@ -145,7 +162,7 @@ button:focus-visible {
 
 .site-nav__list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     gap: var(--space-xs);
     margin: 0;
@@ -155,6 +172,7 @@ button:focus-visible {
 
 .site-nav__link {
     display: inline-block;
+    white-space: nowrap;
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-sm);
     text-decoration: none;

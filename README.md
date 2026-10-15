@@ -97,7 +97,7 @@ GitHub Pages: https://nb-322.github.io/kr1-html-css-shop/
 
 - `position: relative` у карточки товара как контейнера;
 - `position: absolute` у бейджа «Хит» внутри карточки;
-- `position: fixed` у кнопки «Наверх»;
+- `position: fixed` у шапки сайта и кнопки «Наверх»;
 - `z-index` вынесен в переменные `--z-badge` и `--z-scroll-top`.
 
 ## Навигация
@@ -155,7 +155,7 @@ GitHub Pages: https://nb-322.github.io/kr1-html-css-shop/
 - CSS-переменные в `:root`, состояния `:hover`, `:focus-visible`, `:disabled`;
 - Flexbox: шапка, меню, карточка товара, кнопки формы;
 - CSS Grid: сетка товаров, раскладка каталога «фильтры + товары», страница товара;
-- позиционирование: `relative`, `absolute`, `fixed` (кнопка «Наверх»), `z-index` в переменных;
+- позиционирование: `relative`, `absolute`, `fixed` (закреплённая шапка и кнопка «Наверх»), `z-index` в переменных;
 - БЭМ-именование классов, стилизация только через классы.
 
 ## Самостоятельные доработки
