@@ -206,8 +206,7 @@ button:focus-visible {
 .products,
 .catalog,
 .contacts-info,
-.feedback,
-.catalog-layout {
+.feedback {
     margin-bottom: var(--space-lg);
 }
 
