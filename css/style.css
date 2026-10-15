@@ -65,7 +65,12 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-section:target,
+.advantages:target,
+.products:target,
+.feedback:target,
+.contacts-info:target,
+.catalog-layout:target,
+.product-specs:target,
 .site-footer:target {
     outline: 2px dashed var(--color-primary);
     outline-offset: 4px;
@@ -77,19 +82,35 @@ section:target,
 .button {
     display: inline-block;
     padding: var(--space-sm) var(--space-md);
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    border: 1px solid var(--color-primary);
+    border: 1px solid transparent;
     border-radius: var(--radius-md);
     font: inherit;
     text-decoration: none;
     cursor: pointer;
 }
 
-.button:hover {
+.button--primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.button--primary:hover {
     color: var(--color-white);
     background-color: var(--color-primary-dark);
     border-color: var(--color-primary-dark);
+}
+
+.button--secondary {
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    border-color: var(--color-border);
+}
+
+.button--secondary:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .button:disabled,
@@ -98,29 +119,22 @@ section:target,
     cursor: not-allowed;
 }
 
-.button--secondary {
-    color: var(--color-text);
-    background-color: var(--color-white);
-    border-color: var(--color-border);
-}
-
-.button--secondary:hover {
-    color: var(--color-text);
-    background-color: var(--color-surface);
-    border-color: var(--color-primary);
-}
-
 /* ===============================
    4. Шапка и навигация
    =============================== */
 .site-header {
+    background-color: var(--color-surface);
+}
+
+.site-header__inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: var(--space-md);
+    max-width: var(--container-width);
+    margin: 0 auto;
     padding: var(--space-lg);
-    background-color: var(--color-surface);
 }
 
 .site-header__logo {
@@ -152,7 +166,8 @@ section:target,
 }
 
 .site-nav__link--active {
-    font-weight: bold;
+    color: var(--color-white);
+    background-color: var(--color-primary);
 }
 
 /* ===============================
@@ -170,6 +185,7 @@ section:target,
     color: var(--color-muted);
 }
 
+.breadcrumbs__link + .breadcrumbs__link::before,
 .breadcrumbs__current::before {
     content: " / ";
     color: var(--color-muted);
@@ -196,6 +212,7 @@ section:target,
 
 .advantages__title,
 .products__title,
+.catalog-products__title,
 .catalog__title,
 .contacts-info__title,
 .feedback__title {
@@ -247,14 +264,34 @@ section:target,
     font-size: 14px;
 }
 
-.product-card--hit {
+.product-card__badge--discount {
+    background-color: var(--color-danger);
+}
+
+.product-card--featured {
     border-color: var(--color-primary);
+}
+
+.product-card--discount {
+    border-color: var(--color-danger);
+}
+
+.product-card--discount .product-card__price {
+    color: var(--color-danger);
 }
 
 .product-card__title,
 .product-card__description,
 .product-card__price {
     margin: 0;
+}
+
+.product-card__title {
+    padding-right: 80px;
+}
+
+.product-card__description {
+    color: var(--color-muted);
 }
 
 .product-card__price {
@@ -267,7 +304,88 @@ section:target,
 }
 
 /* ===============================
-   7. Каталог и фильтры
+   7. Страница товара и таблица
+   =============================== */
+.product,
+.product-specs,
+.order {
+    margin-bottom: var(--space-lg);
+}
+
+.product__title,
+.product-specs__title,
+.order__title {
+    margin-top: 0;
+}
+
+.product__layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+.product__image {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+}
+
+.product__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: flex-start;
+}
+
+.product__description,
+.product__price,
+.product__availability {
+    margin: 0;
+}
+
+.product__price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product__availability {
+    color: var(--color-success);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table__caption {
+    margin-bottom: var(--space-sm);
+    color: var(--color-muted);
+    text-align: left;
+}
+
+.product-table th,
+.product-table td {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border-light);
+    text-align: left;
+}
+
+.product-table thead th {
+    background-color: var(--color-surface);
+}
+
+.product-table tbody tr:nth-child(even) {
+    background-color: var(--color-surface-alt);
+}
+
+.order__text {
+    margin-top: 0;
+}
+
+/* ===============================
+   8. Каталог и фильтры
    =============================== */
 .catalog-layout {
     display: grid;
@@ -277,7 +395,7 @@ section:target,
     margin-bottom: var(--space-lg);
 }
 
-.catalog-layout__filters {
+.catalog-filters {
     grid-area: filters;
     padding: var(--space-md);
     border: 1px solid var(--color-border-light);
@@ -285,37 +403,37 @@ section:target,
     background-color: var(--color-surface-alt);
 }
 
-.catalog-layout__products {
+.catalog-products {
     grid-area: products;
 }
 
-.filters {
+.catalog-filters__form {
     display: grid;
     gap: var(--space-md);
 }
 
-.filters__title {
+.catalog-filters__title {
     margin-top: 0;
 }
 
-.filters__group {
+.catalog-filters__group {
     margin: 0;
     padding: var(--space-md);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
 }
 
-.filters__legend {
+.catalog-filters__legend {
     font-weight: bold;
 }
 
-.filters__option,
-.filters__label {
+.catalog-filters__option,
+.catalog-filters__label {
     display: block;
     margin-bottom: var(--space-sm);
 }
 
-.filters__input {
+.catalog-filters__input {
     width: 100%;
     margin-bottom: var(--space-sm);
     padding: var(--space-sm);
@@ -325,7 +443,7 @@ section:target,
 }
 
 /* ===============================
-   8. Подвал и кнопка «Наверх»
+   9. Подвал и кнопка «Наверх»
    =============================== */
 .site-footer {
     padding: var(--space-lg);
@@ -360,7 +478,7 @@ section:target,
 }
 
 /* ===============================
-   9. Форма и модальное окно
+   10. Форма и модальное окно
    =============================== */
 .order-dialog {
     width: min(100% - 32px, 560px);

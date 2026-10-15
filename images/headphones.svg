@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Схематичное изображение накладных наушников">
+    <rect width="480" height="360" fill="#eef5ff"/>
+    <path d="M120 220v-30a120 120 0 0 1 240 0v30" fill="none" stroke="#0057b8" stroke-width="16" stroke-linecap="round"/>
+    <rect x="86" y="205" width="68" height="110" rx="26" fill="#0057b8"/>
+    <rect x="326" y="205" width="68" height="110" rx="26" fill="#0057b8"/>
+    <rect x="104" y="228" width="32" height="64" rx="16" fill="#eef5ff"/>
+    <rect x="344" y="228" width="32" height="64" rx="16" fill="#eef5ff"/>
+</svg>
