@@ -14,6 +14,7 @@
     --color-surface-accent: #eef5ff;
     --color-danger: #b00020;
     --color-success: #168a2f;
+    --color-accent: #f0b429;
     --color-success-bg: #eefaf0;
     --color-white: #ffffff;
 
@@ -286,6 +287,20 @@ button:focus-visible {
     background-color: var(--color-danger);
 }
 
+.product-card__badge--new {
+    background-color: var(--color-success);
+}
+
+.product-card__badge--recommended {
+    color: var(--color-text);
+    background-color: var(--color-accent);
+}
+
+.product-card__badge--muted {
+    color: var(--color-text);
+    background-color: var(--color-border-light);
+}
+
 .product-card--featured {
     border-color: var(--color-primary);
 }
@@ -296,6 +311,28 @@ button:focus-visible {
 
 .product-card--discount .product-card__price {
     color: var(--color-danger);
+}
+
+.product-card--new {
+    border-color: var(--color-success);
+}
+
+.product-card--new .product-card__price {
+    color: var(--color-success);
+}
+
+.product-card--recommended {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.product-card--out-of-stock {
+    background-color: var(--color-surface-alt);
+}
+
+.product-card--out-of-stock .product-card__title,
+.product-card--out-of-stock .product-card__price {
+    color: var(--color-muted);
 }
 
 .product-card__title,

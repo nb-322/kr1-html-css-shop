@@ -95,7 +95,8 @@
                     <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
                 </article>
 
-                <article class="product-card" data-category="popular" data-price="4200">
+                <article class="product-card product-card--recommended" data-category="popular" data-price="4200">
+                    <span class="product-card__badge product-card__badge--recommended">Выбор редакции</span>
                     <h3 class="product-card__title">Мышь</h3>
                     <p class="product-card__description">Беспроводная, вес 63 грамма, для работы и игр.</p>
                     <p class="product-card__price">Цена: 4200 руб.</p>
@@ -110,18 +111,22 @@
                     <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
                 </article>
 
-                <article class="product-card" data-category="new" data-price="5300">
+                <article class="product-card product-card--new" data-category="new" data-price="5300">
+                    <span class="product-card__badge product-card__badge--new">Новинка</span>
                     <h3 class="product-card__title">Веб-камера</h3>
                     <p class="product-card__description">Разрешение 1080p, автофокус, встроенный микрофон.</p>
                     <p class="product-card__price">Цена: 5300 руб.</p>
                     <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
                 </article>
 
-                <article class="product-card" data-category="new" data-price="1900">
+                <article class="product-card product-card--out-of-stock" data-category="new" data-price="1900">
+                    <span class="product-card__badge product-card__badge--muted">Нет в наличии</span>
                     <h3 class="product-card__title">USB-хаб</h3>
                     <p class="product-card__description">Четыре порта USB 3.0, алюминиевый корпус.</p>
                     <p class="product-card__price">Цена: 1900 руб.</p>
-                    <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+                    <button class="button button--primary button--disabled product-card__button" type="button" disabled>
+                        Нет в наличии
+                    </button>
                 </article>
             </div>
         </section>
